@@ -8,8 +8,17 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#">Treebook</a>
-   <ul class="nav navbar-nav navbar-left">
+   <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "All Statuses", statuses_path %></li>
+        
+        <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
+    </ul>  
+
+
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->

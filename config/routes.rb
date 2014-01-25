@@ -1,6 +1,9 @@
 Treebook::Application.routes.draw do
+  get "pages/home"
+  devise_for :users
   resources :statuses
-
+  root 'statuses#index'
+  get 'home' => 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
