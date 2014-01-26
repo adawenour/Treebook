@@ -6,6 +6,8 @@
 
     <% @statuses.each do |status| %>
     <div class="status">
+
+      <p><%= status.user.try(:profile_name) %></P>
       <p><%= status.content %></P>
       <div class="meta">
         <%= link_to time_ago_in_words(status.created_at) + " ago", status %>

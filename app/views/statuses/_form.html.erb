@@ -12,14 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+    <div class="form-group">
+      <%= f.label :content %><br>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit  %>
   </div>
 <% end %>

@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @status.name %>
+
+  <strong>User</strong>
+  <%= @status.user.try(:profile_name) %>
+ 
+
 </p>
 
 <p>
