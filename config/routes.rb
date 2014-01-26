@@ -1,4 +1,5 @@
 Treebook::Application.routes.draw do
+  get "profile/show"
   get "pages/home"
   devise_for :users
   resources :statuses
