@@ -10,6 +10,8 @@ Treebook::Application.routes.draw do
   resources :statuses
   root 'statuses#index'
   get 'home' => 'pages#home'
+
+ 
  
 
   # The priority is based upon order of creation: first created -> highest priority.

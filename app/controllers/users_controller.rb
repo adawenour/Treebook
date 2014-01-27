@@ -4,6 +4,7 @@ before_filter :authenticate_user!
 def show
     @user = User.find(params[:id])
     @statuses = Status.all
+   
 
 
     respond_to do |format|

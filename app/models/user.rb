@@ -7,5 +7,10 @@ class User < ActiveRecord::Base
   has_many :statuses
 
  validates :profile_name, presence: true
+
+
 end
+
+
+
 
