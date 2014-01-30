@@ -11,11 +11,14 @@ class StatusesController < ApplicationController
   # GET /statuses/1
   # GET /statuses/1.json
   def show
+    @statuses = Status.find(params[:id])
+    @comment = @status.comments.build
   end
 
   # GET /statuses/new
   def new
     @status = current_user.statuses.build
+
   end
 
   # GET /statuses/1/edit

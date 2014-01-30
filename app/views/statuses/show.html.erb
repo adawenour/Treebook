@@ -10,3 +10,14 @@
 <%= link_to 'Edit', edit_status_path(@status) %> |
 <% end %>
 <%= link_to 'Back', statuses_path %>
+
+<h3>Comments</h3>
+<% @statuses.comments.each do |comment| %>
+  <div>
+    <strong> comment </strong>
+    <br />
+    <p><%= comment.body %></p>
+  </div>
+<% end %>
+
+	<%= render 'comments/form' %>
