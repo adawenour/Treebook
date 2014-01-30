@@ -3,15 +3,24 @@ Treebook::Application.routes.draw do
 
   
   devise_for :users
-  resources :users, :only => [:show]
+
+resources :users do
+  member do
+    get :follow
+    get :unfollow
+  end
+end
+
 
  
   
   resources :statuses
-  root 'statuses#index'
+  
+  root 'statuses#index' 
   get 'home' => 'pages#home'
+  get 'feed' => 'statuses#index'
 
- 
+
  
 
   # The priority is based upon order of creation: first created -> highest priority.

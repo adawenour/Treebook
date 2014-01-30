@@ -6,13 +6,12 @@ class User < ActiveRecord::Base
 
  validates :profile_name, presence: true
 
-  has_many :statuses
-  has_many :user_friendships
-  has_many :friends, through: :user_friendships
+  has_many :statuses 
 
+  acts_as_follower
+acts_as_followable
 
 end
-
 
 
 

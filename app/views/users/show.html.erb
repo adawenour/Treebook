@@ -8,8 +8,10 @@
 <div class="col-md-4">
 <div div class="well well-sm">
 <p><strong>Name</strong></p> <%= @user.profile_name %>
-<p><strong>User</strong></p> <%= link_to user_path(@user), @user %>
-</div>
+<p><strong>User</strong></p> <%= link_to user_path(@user) %> 
+<p><%= link_to "Follow", follow_user_path(@user), class: "btn btn-success" %>
+<%= link_to "UnFollow", unfollow_user_path(@user), class: "btn btn-primary" %></p>
+</div> 
 </div>
 </div>
 
@@ -30,8 +32,11 @@
       <div class="meta">
         <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
         <span class"admin">
+      
           | <%= link_to 'Edit', edit_status_path(status) %> |
           <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
+
         </span>
       </div>
     </div>

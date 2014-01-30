@@ -8,8 +8,11 @@
     <div class="status">
 
       <div class="span1">
-     <p><%= status.user.try(:profile_name) %></P>
+
+    
+    <strong>Profile <%= link_to status.user.profile_name, status.user %></strong>
       <p><%= status.content %></P>
+    
       <div class="meta">
         <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
         <span class"admin">

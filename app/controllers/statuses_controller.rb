@@ -22,6 +22,7 @@ class StatusesController < ApplicationController
   def edit
   end
 
+
   # POST /statuses
   # POST /statuses.json
   def create
