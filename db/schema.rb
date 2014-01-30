@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130025100) do
+ActiveRecord::Schema.define(version: 20140130090507) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "status_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["status_id"], name: "index_comments_on_status_id"
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
