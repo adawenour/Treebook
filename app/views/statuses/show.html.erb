@@ -14,7 +14,7 @@
 <h3>Comments</h3>
 <% @statuses.comments.each do |comment| %>
   <div>
-    <strong> comment </strong>
+    <strong> comment by <%= @statuses.user.profile_name %> </strong>
     <br />
     <p><%= comment.body %></p>
   </div>
