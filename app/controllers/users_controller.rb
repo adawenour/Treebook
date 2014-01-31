@@ -7,8 +7,9 @@ def show
     @statuses = @user.statuses
   end
 
-def pin_params
-      params.require(:user).permit(:avatar)
+private
+def user_params
+      params.require(:user).permit(:avatar, :image)
     end
 
  def create
