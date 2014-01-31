@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130090507) do
+ActiveRecord::Schema.define(version: 20140131050221) do
 
   create_table "comments", force: true do |t|
     t.integer  "status_id"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20140130090507) do
   end
 
   add_index "comments", ["status_id"], name: "index_comments_on_status_id"
+
+  create_table "documents", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id"
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
@@ -40,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140130090507) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "document_id"
   end
 
   add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
@@ -60,6 +73,10 @@ ActiveRecord::Schema.define(version: 20140130090507) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

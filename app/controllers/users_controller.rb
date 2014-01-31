@@ -7,6 +7,14 @@ def show
     @statuses = @user.statuses
   end
 
+def pin_params
+      params.require(:user).permit(:avatar)
+    end
+
+ def create
+  @user = User.create(user_params)
+end
+
 
  end
   

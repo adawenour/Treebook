@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
  validates :profile_name, presence: true
 
   has_many :statuses 
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   acts_as_follower
 acts_as_followable
