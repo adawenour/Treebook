@@ -14,7 +14,16 @@ acts_as_followable
 
 has_many :albums
 has_many :pictures
+has_many :activities
 
+def create_activity(item, action)
+	activity_activities.new
+	activity.targetable = item
+	activity.action = action
+	activity.save
+	activity
+
+end
 end
 
 
