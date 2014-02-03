@@ -1,5 +1,8 @@
 Treebook::Application.routes.draw do
 
+  resources :activities, only: [:index]
+
+  get "activites/index"
 resources :albums do
   resources :pictures
 end
